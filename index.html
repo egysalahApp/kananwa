@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العربية السهلة - أنواع كان</title>
+    <!-- تضمين مكتبة Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تضمين الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Noto Naskh Arabic', serif;
+            background-color: #f8fafc; /* لون باستيل خفيف جداً */
+            color: #1e293b;
+        }
+        .font-readex {
+            font-family: 'Readex Pro', sans-serif;
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* تصميم مخصص للتبويبات */
+        .tab-btn {
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-btn.active {
+            border-bottom-color: #4f46e5;
+            color: #4f46e5;
+            font-weight: 700;
+            background-color: #eef2ff;
+        }
+        .radio-custom:checked + label {
+            border-color: #4f46e5;
+            background-color: #eef2ff;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- الرأس (Header) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex flex-col text-center sm:text-right">
+                <a href="https://www.youtube.com/egysalah" target="_blank" class="flex items-center justify-center sm:justify-start gap-2 text-red-600 hover:text-red-700 transition font-readex text-2xl font-bold mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21.582 6.186a2.506 2.506 0 0 0-1.762-1.766C18.265 4 12 4 12 4s-6.264 0-7.82.42a2.505 2.505 0 0 0-1.76 1.766C2 7.74 2 12 2 12s0 4.26.42 5.814a2.506 2.506 0 0 0 1.76 1.766C5.735 20 12 20 12 20s6.265 0 7.82-.42a2.506 2.506 0 0 0 1.762-1.766C22 16.26 22 12 22 12s0-4.26-.418-5.814zM9.993 15.005V8.995L15.226 12l-5.233 3.005z"/>
+                    </svg>
+                    العربية السهلة
+                </a>
+                <span class="font-readex text-slate-600 text-lg font-semibold">محمود صلاح</span>
+            </div>
+            
+            <div class="text-center">
+                <h1 class="font-readex text-2xl font-bold text-indigo-900">أنواع "كان"</h1>
+                <p class="text-indigo-600 font-medium">الناقصة، التامة، الزائدة</p>
+            </div>
+        </div>
+
+        <!-- شريط التنقل الدائم (Tabs) -->
+        <nav class="bg-white border-t border-slate-100 px-4">
+            <div class="max-w-6xl mx-auto flex overflow-x-auto hide-scrollbar">
+                <button onclick="switchTab('home')" id="tab-btn-home" class="tab-btn active px-6 py-4 text-slate-600 font-readex text-lg whitespace-nowrap">الرئيسية</button>
+                <button onclick="switchTab('mcq')" id="tab-btn-mcq" class="tab-btn px-6 py-4 text-slate-600 font-readex text-lg whitespace-nowrap">تدريب الاختيارات</button>
+                <button onclick="switchTab('tf')" id="tab-btn-tf" class="tab-btn px-6 py-4 text-slate-600 font-readex text-lg whitespace-nowrap">تدريب الصواب والخطأ</button>
+                <button onclick="switchTab('sorting')" id="tab-btn-sorting" class="tab-btn px-6 py-4 text-slate-600 font-readex text-lg whitespace-nowrap">تدريب التصنيف</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="flex-grow w-full max-w-6xl mx-auto px-4 py-8">
+        
+        <!-- التبويب 1: الرئيسية -->
+        <section id="tab-home" class="tab-content active">
+            <div class="bg-white rounded-2xl shadow-sm p-6 md:p-10 border border-slate-100">
+                <h2 class="font-readex text-3xl font-bold text-indigo-900 mb-6 flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    مراجعة سريعة
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- الناقصة -->
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                        <h3 class="font-readex text-xl font-bold text-blue-800 mb-3">1. كان الناقصة</h3>
+                        <p class="text-slate-700 text-lg leading-relaxed mb-4">تدخل على الجملة الاسمية، فلا تكتفي بمرفوعها (اسمها) بل تحتاج إلى (خبر) يتمم معناها.</p>
+                        <div class="bg-white p-3 rounded-lg border border-blue-200 text-blue-900 font-bold">
+                            مثال: كانَ الجوُّ جميلًا.
+                        </div>
+                    </div>
+                    
+                    <!-- التامة -->
+                    <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+                        <h3 class="font-readex text-xl font-bold text-emerald-800 mb-3">2. كان التامة</h3>
+                        <p class="text-slate-700 text-lg leading-relaxed mb-4">تكتفي بمرفوعها لتمام المعنى ويعرب (فاعلًا)، وتأتي بمعنى (وُجِدَ) أو (حَدَثَ) أو (تَحَقَّقَ).</p>
+                        <div class="bg-white p-3 rounded-lg border border-emerald-200 text-emerald-900 font-bold">
+                            مثال: ذاكرتُ فكانَ النجاحُ.
+                        </div>
+                    </div>
+
+                    <!-- الزائدة -->
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
+                        <h3 class="font-readex text-xl font-bold text-purple-800 mb-3">3. كان الزائدة</h3>
+                        <p class="text-slate-700 text-lg leading-relaxed mb-4">تزاد للتوكيد، ولا عمل لها. وتأتي غالبًا بين (ما) التعجبية وفعل التعجب، ويمكن الاستغناء عنها.</p>
+                        <div class="bg-white p-3 rounded-lg border border-purple-200 text-purple-900 font-bold">
+                            مثال: ما كانَ أروعَ السماءَ!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <p class="text-xl text-slate-600 font-medium mb-6">هل أنت مستعد لاختبار معلوماتك؟ اختر أحد التدريبات من الأعلى لتبدأ.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- التبويب 2: الاختيارات -->
+        <section id="tab-mcq" class="tab-content">
+            <div class="flex justify-between items-center mb-6 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <h2 class="font-readex text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    تدريب الاختيارات
+                </h2>
+                <div class="font-readex text-lg font-bold bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg">
+                    النتيجة: <span id="mcq-score">0</span> / 8
+                </div>
+            </div>
+            <div id="mcq-container" class="space-y-6"></div>
+        </section>
+
+        <!-- التبويب 3: الصواب والخطأ -->
+        <section id="tab-tf" class="tab-content">
+            <div class="flex justify-between items-center mb-6 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <h2 class="font-readex text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    الصواب والخطأ
+                </h2>
+                <div class="font-readex text-lg font-bold bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg">
+                    النتيجة: <span id="tf-score">0</span> / 6
+                </div>
+            </div>
+            <div id="tf-container" class="space-y-6"></div>
+        </section>
+
+        <!-- التبويب 4: التصنيف -->
+        <section id="tab-sorting" class="tab-content">
+            <div class="flex justify-between items-center mb-6 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                <h2 class="font-readex text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    تدريب التصنيف
+                </h2>
+                <div class="font-readex text-lg font-bold bg-purple-50 text-purple-700 px-4 py-2 rounded-lg">
+                    النتيجة: <span id="sorting-score">0</span> / 9
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-100 mb-6">
+                <p class="text-xl text-slate-600 mb-6 text-center font-medium">اقرأ الجملة، ثم اضغط على الزر المناسب لنوع (كان) ليتم تصنيفها وإظهار النتيجة فورًا.</p>
+                
+                <!-- الجمل غير المصنفة -->
+                <div id="sorting-pool" class="flex flex-col gap-4 mb-8"></div>
+
+                <!-- الصناديق -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 border-t pt-8">
+                    <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 min-h-[200px]">
+                        <h3 class="font-readex text-xl font-bold text-blue-800 mb-4 text-center pb-2 border-b border-blue-200">الناقصة</h3>
+                        <div id="bucket-ناقصة" class="space-y-3"></div>
+                    </div>
+                    <div class="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-4 min-h-[200px]">
+                        <h3 class="font-readex text-xl font-bold text-emerald-800 mb-4 text-center pb-2 border-b border-emerald-200">التامة</h3>
+                        <div id="bucket-تامة" class="space-y-3"></div>
+                    </div>
+                    <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-4 min-h-[200px]">
+                        <h3 class="font-readex text-xl font-bold text-purple-800 mb-4 text-center pb-2 border-b border-purple-200">الزائدة</h3>
+                        <div id="bucket-زائدة" class="space-y-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-auto py-6 text-center">
+        <p class="text-slate-500 font-medium">تم التصميم لتسهيل تعلم اللغة العربية.</p>
+    </footer>
+
+    <!-- سكربت المنطق والتفاعلية -->
+    <script>
+        // --- 1. إدارة التبويبات ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById('tab-' + tabId).classList.add('active');
+            document.getElementById('tab-btn-' + tabId).classList.add('active');
+        }
+
+        // الأيقونات المشتركة
+        const iconCorrect = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+        const iconWrong = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`;
+
+        // دالة إنشاء صندوق التغذية الراجعة
+        function createFeedbackHTML(isCorrect, explanation) {
+            const bgColor = isCorrect ? 'bg-emerald-50 border-emerald-200' : 'bg-red-50 border-red-200';
+            const textColor = isCorrect ? 'text-emerald-800' : 'text-red-800';
+            const title = isCorrect ? 'إجابة صحيحة' : 'إجابة خاطئة';
+            const icon = isCorrect ? iconCorrect : iconWrong;
+            const praise = isCorrect ? '<span class="mr-2 font-bold">عمل رائع!</span>' : '';
+
+            return `
+                <div class="mt-4 p-5 rounded-xl border ${bgColor} animate-fade-in">
+                    <div class="flex items-center gap-2 mb-2 font-readex text-xl font-bold ${textColor}">
+                        ${icon}
+                        ${title}
+                    </div>
+                    <p class="text-lg text-slate-700 leading-relaxed font-medium">
+                        ${praise} ${explanation}
+                    </p>
+                </div>
+            `;
+        }
+
+        // --- 2. تدريب الاختيارات (MCQ) ---
+        const mcqQuestions = [
+            { q: "«ما كان أروع انتصار الحق!» - ما نوع 'كان' في هذه الجملة؟", options: ["ناقصة", "تامة", "زائدة"], ans: "زائدة", exp: "تأتي 'كان' زائدة غالباً بين (ما) التعجبية وفعل التعجب (أفعل)." },
+            { q: "«اجتهد الطالب فكان النجاح» - ما نوع 'كان' هنا؟", options: ["ناقصة", "تامة", "زائدة"], ans: "تامة", exp: "جاءت بمعنى (تحقق أو وُجِدَ)، واكتفت بالفاعل (النجاح)، ولم تحتج لخبر." },
+            { q: "«كان الجو ممطرًا طوال اليوم» - ما نوع 'كان'؟", options: ["ناقصة", "تامة", "زائدة"], ans: "ناقصة", exp: "احتاجت إلى اسم (الجو) وخبر (ممطرًا) ليتم معنى الجملة." },
+            { q: "«اتق الله حيثما كنت» - ما نوع 'كان'؟", options: ["ناقصة", "تامة", "زائدة"], ans: "تامة", exp: "اكتفت بفاعلها (التاء)، والمعنى: حيثما وُجدت." },
+            { q: "«أكرمت زيدًا وما كان أغناه عن إكرامي!» - ما نوع 'كان'؟", options: ["ناقصة", "تامة", "زائدة"], ans: "زائدة", exp: "وقعت بين متلازمين في أسلوب التعجب للتوكيد، ولا عمل لها." },
+            { q: "«لو ظل السلام لكان الرخاء» - ما نوع 'كان'؟", options: ["ناقصة", "تامة", "زائدة"], ans: "تامة", exp: "الرخاء فاعل، والمعنى: لحدث أو لوُجد الرخاء." },
+            { q: "«كان العلم نورًا يهدي الأجيال» - ما نوع 'كان'؟", options: ["ناقصة", "تامة", "زائدة"], ans: "ناقصة", exp: "دخلت على مبتدأ (العلم) وخبر (نورًا)." },
+            { q: "«لله در بني تميم وما كان أشجعهم!» - ما نوع 'كان'؟", options: ["ناقصة", "تامة", "زائدة"], ans: "زائدة", exp: "جاءت زائدة للتوكيد في أسلوب التعجب." }
+        ];
+
+        let mcqScore = 0;
+
+        function renderMCQ() {
+            const container = document.getElementById('mcq-container');
+            container.innerHTML = '';
+            
+            mcqQuestions.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "bg-white p-6 rounded-2xl shadow-sm border border-slate-200";
+                
+                let optionsHTML = item.options.map((opt, optIdx) => `
+                    <button id="mcq-btn-${index}-${optIdx}" onclick="handleMCQ(${index}, '${opt}', ${optIdx})" class="w-full text-right p-4 rounded-xl border-2 border-slate-100 hover:border-indigo-400 hover:bg-indigo-50 transition-all text-xl font-medium text-slate-700">
+                        ${opt}
+                    </button>
+                `).join('');
+
+                qDiv.innerHTML = `
+                    <h3 class="font-readex text-2xl font-bold text-slate-800 mb-6 leading-relaxed">
+                        <span class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-lg ml-2 text-xl">${index + 1}</span>
+                        ${item.q}
+                    </h3>
+                    <div class="space-y-3" id="mcq-options-${index}">
+                        ${optionsHTML}
+                    </div>
+                    <div id="mcq-feedback-${index}"></div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        window.handleMCQ = function(qIndex, selectedOpt, btnIdx) {
+            const item = mcqQuestions[qIndex];
+            const isCorrect = selectedOpt === item.ans;
+            const optionsContainer = document.getElementById(`mcq-options-${qIndex}`);
+            const buttons = optionsContainer.querySelectorAll('button');
+            
+            // تعطيل جميع الأزرار وتحديث الألوان
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                btn.classList.remove('hover:border-indigo-400', 'hover:bg-indigo-50', 'border-slate-100');
+                
+                if (item.options[idx] === item.ans) {
+                    // الإجابة الصحيحة دائمًا تظهر باللون الأخضر
+                    btn.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-800', 'font-bold');
+                } else if (idx === btnIdx && !isCorrect) {
+                    // إجابة المستخدم الخاطئة باللون الأحمر
+                    btn.classList.add('border-red-400', 'bg-red-50', 'text-red-700');
+                } else {
+                    // باقي الخيارات باهتة
+                    btn.classList.add('border-slate-200', 'opacity-50', 'text-slate-400');
+                }
+            });
+
+            // عرض التغذية الراجعة
+            document.getElementById(`mcq-feedback-${qIndex}`).innerHTML = createFeedbackHTML(isCorrect, item.exp);
+
+            // تحديث النتيجة
+            if (isCorrect) {
+                mcqScore++;
+                document.getElementById('mcq-score').innerText = mcqScore;
+            }
+        };
+
+
+        // --- 3. تدريب الصواب والخطأ (TF) ---
+        const tfQuestions = [
+            { q: "في جملة «كان المطر غزيرًا»، 'كان' هنا تامة.", ans: "خطأ", exp: "'كان' هنا ناقصة لأنها احتاجت لخبر (غزيرًا)." },
+            { q: "'كان' التامة تكتفي بمرفوعها الذي يُعرب فاعلًا.", ans: "صواب", exp: "هذا صحيح، فهي تكتفي بالفاعل ولا تحتاج لخبر." },
+            { q: "الجملة «ما كان أحسن الدين والدنيا»، تحوي 'كان' الناقصة.", ans: "خطأ", exp: "'كان' زائدة لوقوعها بين (ما) وفعل التعجب." },
+            { q: "إذا جاءت 'كان' بمعنى (وُجِدَ) أو (حَصَلَ) فهي تامة.", ans: "صواب", exp: "هذا هو الضابط الأساسي لمعرفة 'كان' التامة." },
+            { q: "«غابت الشمس فكان الظلام»، 'كان' هنا تامة.", ans: "صواب", exp: "كلمة (الظلام) فاعل، والمعنى: حدث الظلام." },
+            { q: "تزاد 'كان' قياسيًا بين (ما) التعجبية وفعل التعجب للتوكيد.", ans: "صواب", exp: "هذا من أشهر وأكثر مواضع زيادتها." }
+        ];
+
+        let tfScore = 0;
+
+        function renderTF() {
+            const container = document.getElementById('tf-container');
+            container.innerHTML = '';
+            
+            tfQuestions.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "bg-white p-6 rounded-2xl shadow-sm border border-slate-200";
+                
+                qDiv.innerHTML = `
+                    <h3 class="font-readex text-2xl font-bold text-slate-800 mb-6 leading-relaxed">
+                        <span class="text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg ml-2 text-xl">${index + 1}</span>
+                        ${item.q}
+                    </h3>
+                    <div class="flex gap-4" id="tf-options-${index}">
+                        <button onclick="handleTF(${index}, 'صواب', 0)" class="flex-1 p-4 rounded-xl border-2 border-slate-100 hover:border-emerald-400 hover:bg-emerald-50 transition-all text-xl font-bold text-slate-700">
+                            صواب
+                        </button>
+                        <button onclick="handleTF(${index}, 'خطأ', 1)" class="flex-1 p-4 rounded-xl border-2 border-slate-100 hover:border-red-400 hover:bg-red-50 transition-all text-xl font-bold text-slate-700">
+                            خطأ
+                        </button>
+                    </div>
+                    <div id="tf-feedback-${index}"></div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        window.handleTF = function(qIndex, selectedOpt, btnIdx) {
+            const item = tfQuestions[qIndex];
+            const isCorrect = selectedOpt === item.ans;
+            const optionsContainer = document.getElementById(`tf-options-${qIndex}`);
+            const buttons = optionsContainer.querySelectorAll('button');
+            const options = ['صواب', 'خطأ'];
+
+            buttons.forEach((btn, idx) => {
+                btn.disabled = true;
+                btn.classList.remove('hover:border-emerald-400', 'hover:bg-emerald-50', 'hover:border-red-400', 'hover:bg-red-50', 'border-slate-100');
+                
+                if (options[idx] === item.ans) {
+                    btn.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+                } else if (idx === btnIdx && !isCorrect) {
+                    btn.classList.add('border-red-400', 'bg-red-50', 'text-red-700');
+                } else {
+                    btn.classList.add('border-slate-200', 'opacity-50', 'text-slate-400');
+                }
+            });
+
+            document.getElementById(`tf-feedback-${qIndex}`).innerHTML = createFeedbackHTML(isCorrect, item.exp);
+
+            if (isCorrect) {
+                tfScore++;
+                document.getElementById('tf-score').innerText = tfScore;
+            }
+        };
+
+
+        // --- 4. تدريب التصنيف (Sorting) ---
+        const sortingItems = [
+            { id: 1, text: "كان الحارس يقظًا", type: "ناقصة", exp: "احتاجت لاسم وخبر (يقظًا)." },
+            { id: 2, text: "أشرقت الشمس فكان الدفء", type: "تامة", exp: "الدفء فاعل، والمعنى تحقق الدفء." },
+            { id: 3, text: "ما كان أنبل البطل!", type: "زائدة", exp: "للتوكيد بين متلازمين (التعجب)." },
+            { id: 4, text: "كان الوقت متأخرًا", type: "ناقصة", exp: "احتاجت لخبر (متأخرًا)." },
+            { id: 5, text: "إذا لم تذاكر كان الفشل", type: "تامة", exp: "بمعنى حصل الفشل." },
+            { id: 6, text: "يا كوكبًا ما كان أقصر عمره!", type: "زائدة", exp: "في أسلوب التعجب." },
+            { id: 7, text: "كان الدرس سهلًا", type: "ناقصة", exp: "الدرس اسم كان، وسهلًا خبرها." },
+            { id: 8, text: "أينما كنت فاعمل بجد", type: "تامة", exp: "بمعنى أينما وُجدت." },
+            { id: 9, text: "ما كان أسرع الأيام!", type: "زائدة", exp: "لا عمل لها وموقعها للتوكيد." }
+        ];
+
+        let sortingScore = 0;
+
+        // خلط المصفوفة
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function renderSorting() {
+            const pool = document.getElementById('sorting-pool');
+            pool.innerHTML = '';
+            
+            const shuffledItems = shuffleArray([...sortingItems]);
+
+            shuffledItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.id = `sort-item-${item.id}`;
+                itemDiv.className = "bg-white border-2 border-indigo-100 p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow";
+                
+                itemDiv.innerHTML = `
+                    <p class="text-2xl font-bold text-slate-800 mb-4 text-center">${item.text}</p>
+                    <div class="flex justify-center gap-3">
+                        <button onclick="handleSorting(${item.id}, 'ناقصة')" class="px-6 py-2 bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-600 hover:text-white rounded-lg font-bold text-lg transition-colors">ناقصة</button>
+                        <button onclick="handleSorting(${item.id}, 'تامة')" class="px-6 py-2 bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-600 hover:text-white rounded-lg font-bold text-lg transition-colors">تامة</button>
+                        <button onclick="handleSorting(${item.id}, 'زائدة')" class="px-6 py-2 bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-600 hover:text-white rounded-lg font-bold text-lg transition-colors">زائدة</button>
+                    </div>
+                `;
+                pool.appendChild(itemDiv);
+            });
+        }
+
+        window.handleSorting = function(itemId, selectedType) {
+            const item = sortingItems.find(i => i.id === itemId);
+            const isCorrect = selectedType === item.type;
+            
+            // إخفاء العنصر من القائمة العلوية
+            const poolItem = document.getElementById(`sort-item-${itemId}`);
+            poolItem.style.display = 'none';
+
+            // إنشاء كارت في الصندوق المناسب
+            const bucket = document.getElementById(`bucket-${selectedType}`);
+            const resultCard = document.createElement('div');
+            
+            const borderColor = isCorrect ? 'border-emerald-400' : 'border-red-400';
+            const bgColor = isCorrect ? 'bg-white' : 'bg-red-50';
+            
+            resultCard.className = `p-4 rounded-lg border-2 ${borderColor} ${bgColor} shadow-sm animate-fade-in`;
+            
+            let statusHTML = isCorrect 
+                ? `<div class="flex items-center gap-2 text-emerald-600 font-bold mb-2">${iconCorrect} إجابة صحيحة</div>`
+                : `<div class="flex items-center gap-2 text-red-600 font-bold mb-2">${iconWrong} إجابة خاطئة (كانت ${item.type})</div>`;
+
+            resultCard.innerHTML = `
+                <p class="text-xl font-bold text-slate-800 mb-3 border-b pb-2">${item.text}</p>
+                ${statusHTML}
+                <p class="text-slate-600 font-medium text-sm mt-2">${item.exp}</p>
+            `;
+            
+            bucket.appendChild(resultCard);
+
+            // تحديث النتيجة
+            if (isCorrect) {
+                sortingScore++;
+                document.getElementById('sorting-score').innerText = sortingScore;
+            }
+            
+            // تحقق إذا تم الانتهاء
+            checkSortingCompletion();
+        };
+
+        function checkSortingCompletion() {
+            const pool = document.getElementById('sorting-pool');
+            const remaining = Array.from(pool.children).filter(child => child.style.display !== 'none').length;
+            
+            if (remaining === 0) {
+                const doneMsg = document.createElement('div');
+                doneMsg.className = "bg-indigo-50 border border-indigo-200 p-6 rounded-xl text-center animate-fade-in";
+                doneMsg.innerHTML = `
+                    <h3 class="font-readex text-2xl font-bold text-indigo-800 mb-2">اكتمل التدريب!</h3>
+                    <p class="text-xl text-indigo-600 font-bold">نتيجتك النهائية في التصنيف: ${sortingScore} من 9</p>
+                    ${sortingScore === 9 ? '<p class="text-emerald-600 font-bold mt-2">ممتاز! أداء استثنائي.</p>' : ''}
+                `;
+                pool.appendChild(doneMsg);
+            }
+        }
+
+        // --- تهيئة التطبيق عند التحميل ---
+        window.onload = () => {
+            renderMCQ();
+            renderTF();
+            renderSorting();
+        };
+
+    </script>
+</body>
+</html>
